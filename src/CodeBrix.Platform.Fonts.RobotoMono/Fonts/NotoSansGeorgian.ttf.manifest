@@ -1,0 +1,40 @@
+{
+  "fonts": [
+    {
+      "font_style": "Normal",
+      "font_weight": 300,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Light.ttf"
+    },
+    {
+      "font_style": "Normal",
+      "font_weight": 400,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Regular.ttf"
+    },
+    {
+      "font_style": "Normal",
+      "font_weight": 500,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Medium.ttf"
+    },
+    {
+      "font_style": "Normal",
+      "font_weight": 600,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-SemiBold.ttf"
+    },
+    {
+      "font_style": "Normal",
+      "font_weight": 700,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Bold.ttf"
+    },
+    {
+      "font_style": "Normal",
+      "font_weight": 800,
+      "font_stretch": "Normal",
+      "family_name": "ms-appx:///CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-ExtraBold.ttf"
+    }
+  ]
+}

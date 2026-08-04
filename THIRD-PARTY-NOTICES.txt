@@ -1,0 +1,226 @@
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+CodeBrix.Platform.Fonts.RobotoMono is a CodeBrix-family redistribution of the
+Roboto Mono monospace font family, packaged as a .NET 10 NuGet library. Roboto
+Mono covers the Latin, modern Greek and Cyrillic scripts but not polytonic
+Greek, Armenian or Georgian, so this package additionally bundles three
+companion families that supply that coverage. The package therefore
+incorporates four pieces of third-party material:
+
+  1. The Roboto Mono font family (SIL OFL 1.1) — the primary text face.
+  2. The Noto Sans Mono font family (SIL OFL 1.1) — the polytonic-Greek
+     companion.
+  3. The Iosevka font family (SIL OFL 1.1) — the Armenian companion.
+  4. The Noto Sans Georgian font family (SIL OFL 1.1) — the Georgian companion.
+
+The CodeBrix-authored parts of this package — the `.csproj`, the
+buildTransitive `.targets` file, the `.ttf.manifest` JSON files, the
+`CODEBRIX-DEVELOP.json` descriptor, the `.uprimarker` marker, the
+documentation, and the packaging metadata — are original to the CodeBrix family
+and contain no third-party source code. They are released, together with the
+bundled font files, under the SIL Open Font License, Version 1.1, the same
+license as the fonts. The full license text is bundled with this repository
+three times at the repository root — `OFL-Roboto.txt`, `OFL-Noto.txt` and
+`OFL-Iosevka.txt`, one per upstream font project, identical in license body and
+differing only in their copyright headers — and the same three files are
+packaged inside the produced NuGet.
+
+================================================================================
+
+1. Roboto Mono Font Family
+   -----------------------
+   Project URL:    https://github.com/googlefonts/robotomono
+   Designer:       Christian Robertson
+   Copyright:      Copyright 2015 The Roboto Mono Project Authors
+                   (https://github.com/googlefonts/robotomono)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Roboto Mono copyright statement declares NO Reserved
+   Font Name, so SIL OFL 1.1 condition 3 does not apply to this family. The
+   `.ttf` files are redistributed bit-for-bit unmodified.
+
+   Files redistributed from this upstream project (binary `.ttf` files),
+   as downloaded from Google Fonts (https://fonts.google.com/specimen/Roboto+Mono):
+
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-BoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-Italic.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-Light.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-LightItalic.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-MediumItalic.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-SemiBold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/RobotoMono-SemiBoldItalic.ttf
+
+   Modifications made during redistribution:
+     - Only the five weights Light (300), Regular (400), Medium (500),
+       SemiBold (600), and Bold (700) are shipped as static instances; the
+       upstream Thin (100) and ExtraLight (200) static instances are not
+       included. (Those weights remain reachable through the bundled variable
+       font.) Roboto Mono publishes no ExtraBold (800) or Black (900) — its
+       weight axis stops at Bold (700) — so unlike the sibling CodeBrix font
+       packages this package has no ExtraBold static.
+     - The upstream upright variable font `RobotoMono-VariableFont_wght.ttf`
+       was renamed to `RobotoMono.ttf`. No `.ttf` binary content was altered.
+     - The separate upstream italic variable font
+       `RobotoMono-Italic-VariableFont_wght.ttf` is not included; italic
+       styles are provided through the static instances.
+
+================================================================================
+
+2. Noto Sans Mono Font Family (polytonic-Greek companion)
+   ------------------------------------------------------
+   Project URL:    https://github.com/notofonts/latin-greek-cyrillic
+   Copyright:      Copyright 2022 The Noto Project Authors
+                   (https://github.com/notofonts/latin-greek-cyrillic)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Noto Sans Mono copyright statement declares NO Reserved
+   Font Name, so SIL OFL 1.1 condition 3 does not apply to this family. The
+   `.ttf` files are redistributed bit-for-bit unmodified.
+
+   Why it is bundled: Roboto Mono carries modern Greek but almost none of the
+   Greek Extended block (polytonic Greek). Noto Sans Mono supplies it, in a
+   monospace design with the same 0.6 em character advance as Roboto Mono, and
+   also provides a second full Latin/Greek/Cyrillic set behind the primary.
+
+   Files redistributed from this upstream project (binary `.ttf` files),
+   as downloaded from Google Fonts (https://fonts.google.com/noto/specimen/Noto+Sans+Mono):
+
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-Light.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansMono-SemiBold.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300) through ExtraBold (800) are shipped as
+       static instances, in the Normal stretch. The upstream Thin (100),
+       ExtraLight (200) and Black (900) weights, and the Condensed,
+       SemiCondensed and ExtraCondensed stretches, are not included. (All
+       remain reachable through the bundled variable font, which carries both
+       the weight and width axes.) Upstream publishes no italic face for this
+       family, so italic text in the scripts it serves renders upright.
+     - The upstream variable font `NotoSansMono-VariableFont_wdth,wght.ttf`
+       was renamed to `NotoSansMono.ttf`. No `.ttf` binary content was altered.
+
+================================================================================
+
+3. Iosevka Font Family (Armenian companion)
+   ----------------------------------------
+   Project URL:    https://github.com/be5invis/Iosevka
+   Designer:       Renzhi Li (aka. Belleve Invis)
+   Version:        34.4.0
+   Copyright:      Copyright (c) 2015-2026, Renzhi Li
+                   (aka. Belleve Invis, belleve@typeof.net)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Iosevka copyright statement declares NO Reserved Font
+   Name, so SIL OFL 1.1 condition 3 does not apply to this family. The `.ttf`
+   files are redistributed bit-for-bit unmodified; the renames listed below
+   change file names only, and the name tables inside the fonts are untouched.
+
+   Why it is bundled: Roboto Mono and Noto Sans Mono do not cover the Armenian
+   script, and neither Roboto nor Noto publishes a monospace Armenian face.
+   Iosevka is a monospace family with full Armenian coverage. The Extended
+   width grade is shipped because its 0.6 em character advance matches Roboto
+   Mono and Noto Sans Mono exactly (Iosevka's default grade is 0.5 em), so
+   Armenian text keeps the character grid.
+
+   Files redistributed from this upstream project (binary `.ttf` files), taken
+   from the release archive `PkgTTF-Unhinted-Iosevka-34.4.0.zip` at
+   https://github.com/be5invis/Iosevka/releases/tag/v34.4.0 and renamed
+   file-by-file as follows:
+
+     - Iosevka-Extended.ttf          -> Fonts/Iosevka.ttf
+     - Iosevka-ExtendedLight.ttf     -> Fonts/Iosevka-Light.ttf
+     - Iosevka-ExtendedMedium.ttf    -> Fonts/Iosevka-Medium.ttf
+     - Iosevka-ExtendedSemiBold.ttf  -> Fonts/Iosevka-SemiBold.ttf
+     - Iosevka-ExtendedBold.ttf      -> Fonts/Iosevka-Bold.ttf
+     - Iosevka-ExtendedExtraBold.ttf -> Fonts/Iosevka-ExtraBold.ttf
+
+   Modifications made during redistribution:
+     - Only six of upstream's 54 faces are shipped: the Extended width grade in
+       the six weights Light (300) through ExtraBold (800), upright only.
+       Iosevka does publish italic and oblique faces, but this companion exists
+       only to supply the Armenian script and ships upright-only like the other
+       companions.
+     - The UNHINTED upstream builds are used. CodeBrix.Platform renders text
+       through Skia, which does not execute TrueType hinting instructions, so
+       the hinted builds would add roughly forty percent to every file's size
+       without changing rendering.
+     - Iosevka publishes no variable-font `.ttf` (its releases carry static
+       TTF/TTC and webfont formats only), so the dash-free `Iosevka.ttf` — the
+       slot the sibling packages fill with a variable font — is the static
+       Extended-Regular instance, and the manifest's weight-400 entry points at
+       it directly rather than at a duplicate `Iosevka-Regular.ttf`.
+     - No `.ttf` binary content was altered.
+
+================================================================================
+
+4. Noto Sans Georgian Font Family (Georgian companion)
+   ---------------------------------------------------
+   Project URL:    https://github.com/notofonts/georgian
+   Copyright:      Copyright 2022 The Noto Project Authors
+                   (https://github.com/notofonts/georgian)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Noto Sans Georgian copyright statement declares NO
+   Reserved Font Name, so SIL OFL 1.1 condition 3 does not apply to this
+   family. The `.ttf` files are redistributed bit-for-bit unmodified.
+
+   Why it is bundled: no font in the monospace chain covers Georgian — Roboto
+   Mono and Noto Sans Mono are Latin/Greek/Cyrillic only, and Iosevka's
+   Georgian coverage is limited to a single punctuation mark. No monospace font
+   with Georgian letter coverage is available under a suitable license, so this
+   proportional companion supplies the script, exactly as in the sibling
+   CodeBrix.Platform.Fonts.Roboto package (whose copies these files match
+   bit-for-bit).
+
+   Files redistributed from this upstream project (binary `.ttf` files):
+
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Light.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.RobotoMono/Fonts/NotoSansGeorgian-SemiBold.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300) through ExtraBold (800) are shipped as
+       static instances, in the Normal stretch. Upstream publishes no italic
+       face for this family, so italic Georgian text renders upright.
+     - The upstream upright variable font
+       `NotoSansGeorgian-VariableFont_wdth,wght.ttf` was renamed to
+       `NotoSansGeorgian.ttf`. No `.ttf` binary content was altered.
+
+================================================================================
+
+License statement
+-----------------
+
+The combined work is published under the SPDX expression `OFL-1.1`. SIL OFL
+1.1 is a permissive font license that explicitly allows fonts to be bundled
+and redistributed alongside any other software (condition 2). The
+CodeBrix-authored wrapper, build logic, and packaging metadata are released
+under the same SIL OFL 1.1 as the bundled font files.
+
+Jeremy Ellis and contributors license the CodeBrix.Platform.Fonts.RobotoMono
+project to you under the terms set forth in the LICENSE file (SIL OFL 1.1),
+located at the root of this repository; the same license text is carried in
+OFL-Roboto.txt, OFL-Noto.txt and OFL-Iosevka.txt with the per-project
+copyright headers.
+
+If you have any questions about any third-party code or assets referenced
+here, or if you believe that any third-party material has been included in
+CodeBrix.Platform.Fonts.RobotoMono in error, please open a new issue at:
+https://github.com/ellisnet/CodeBrix.Platform.Fonts.RobotoMono/issues
+
+================================================================================
+
+END OF THIRD-PARTY SOFTWARE NOTICES AND INFORMATION

@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="AGENT-README.txt" />
+    <File Path="CODEBRIX-DEVELOP.json" />
+    <File Path="icon-codebrix-128.png" />
+    <File Path="LICENSE" />
+    <File Path="OFL-Iosevka.txt" />
+    <File Path="OFL-Noto.txt" />
+    <File Path="OFL-Roboto.txt" />
+    <File Path="README.md" />
+    <File Path="THIRD-PARTY-NOTICES.txt" />
+  </Folder>
+  <Folder Name="/Solution Items/src/">
+    <File Path="src/CodeBrix.Platform.Fonts.RobotoMono/buildTransitive/net10.0/CodeBrix.Platform.Fonts.RobotoMono.OflLicenseForever.targets" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/CodeBrix.Platform.Fonts.RobotoMono.Tests/CodeBrix.Platform.Fonts.RobotoMono.Tests.csproj" />
+  </Folder>
+  <Project Path="src/CodeBrix.Platform.Fonts.RobotoMono/CodeBrix.Platform.Fonts.RobotoMono.csproj" />
+</Solution>
