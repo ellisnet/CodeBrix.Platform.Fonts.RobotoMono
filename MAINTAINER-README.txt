@@ -73,6 +73,9 @@ REPOSITORY LAYOUT
     THIRD-PARTY-NOTICES.txt   per-file font provenance incl. the Iosevka rename
                               mapping and release-archive URL (packed)
     icon-codebrix-128.png     package icon (packed)
+    global.json               selects the Microsoft.Testing.Platform test
+                              runner; pins no SDK version (not packed)
+    .gitignore                (not packed)
 
 Produced nupkg layout:
 
@@ -107,6 +110,22 @@ TESTING
 =======
 
   dotnet test CodeBrix.Platform.Fonts.RobotoMono.slnx
+
+THE TEST RUNNER IS Microsoft.Testing.Platform, selected by global.json at the
+repository root. That file does NOT pin an SDK version, so the newest installed
+.NET 10 SDK is still used; it exists solely to select the runner:
+
+    { "test": { "runner": "Microsoft.Testing.Platform" } }
+
+Because the setting lives in global.json rather than in the test csproj, it
+applies to every `dotnet test` run anywhere in the repository. Keep the file
+committed -- without it `dotnet test` silently falls back to the older VSTest
+bridge. global.json and .gitignore are also carried in the .slnx Solution Items
+folder, alongside the four readmes, CODEBRIX-DEVELOP.json, the icon, LICENSE,
+the three OFL files and THIRD-PARTY-NOTICES.txt.
+
+The test project's package references are Microsoft.NET.Test.Sdk, xunit.v3,
+xunit.runner.visualstudio and SilverAssertions; there is no coverage collector.
 
 xUnit v3 + SilverAssertions. No opt-in environment variables and no special
 preparation. The tests do not resolve `ms-appx` URIs or render anything; they
