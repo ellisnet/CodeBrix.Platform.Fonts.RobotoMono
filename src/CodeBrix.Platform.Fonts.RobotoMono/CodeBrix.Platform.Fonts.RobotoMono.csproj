@@ -56,14 +56,14 @@
     <Product>CodeBrix.Platform.Fonts.RobotoMono</Product>
     <Title>CodeBrix.Platform.Fonts.RobotoMono</Title>
     <Authors>Jeremy Ellis</Authors>
-    <Description>A .NET 10 redistribution of the Roboto Mono monospace font family, packaged for the CodeBrix family. Ships the Roboto Mono variable font plus 10 static .ttf files (Light/Regular/Medium/SemiBold/Bold weights in Normal/Italic styles), and three companion fonts that extend coverage beyond what Roboto Mono itself carries: Noto Sans Mono (polytonic Greek), Iosevka (the Armenian script, in the Extended width grade that matches Roboto Mono's 0.6 em character advance), and Noto Sans Georgian (the Georgian script). Includes a font .ttf.manifest JSON per family and a buildTransitive .targets file that prunes the unused static font set at consumer-build time. The whole package, code and fonts alike, is distributed under the SIL Open Font License 1.1.</Description>
+    <Description>The Roboto Mono monospace font, ready to use in your app with no separate download or install step. Includes the full range of weights and styles, plus companion fonts that extend character coverage to Greek, Armenian, and Georgian text. Only the styles your app actually uses are included, since unused ones are trimmed away automatically when you build.</Description>
     <PackageLicenseExpression>OFL-1.1</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ellisnet/CodeBrix.Platform.Fonts.RobotoMono</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ellisnet/CodeBrix.Platform.Fonts.RobotoMono</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>icon-codebrix-128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Copyright>Copyright (c) 2026 Jeremy Ellis and contributors. Roboto Mono font (c) 2015 The Roboto Mono Project Authors; Noto Sans Mono and Noto Sans Georgian fonts (c) 2022 The Noto Project Authors; Iosevka font (c) 2015-2026 Renzhi Li; all distributed under SIL OFL 1.1.</Copyright>
+    <Copyright>Copyright (c) 2026 Jeremy Ellis and contributors</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <IsPackable>true</IsPackable>
