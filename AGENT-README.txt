@@ -224,15 +224,17 @@ differently:
      FontStretch drive the choice. On a platform that supports the font
      manifest, those three properties are matched against the
      {font_style, font_weight, font_stretch} triples in
-     `RobotoMono.ttf.manifest` and the matching static file is used. On a
-     platform without manifest support, the variable font itself covers the
-     weight axis. This is the recommended form: it is the only one that works
-     identically on every head.
+     `RobotoMono.ttf.manifest` and the matching static file is used. Every
+     CodeBrix.Platform head supports the manifest, and no CodeBrix.Platform
+     code applies the variable font's weight axis, so a requested weight snaps
+     to the nearest static instance in the manifest. This is the recommended
+     form: it is the only one that works identically on every head.
 
   2. Reference a specific static file directly
      (`.../Fonts/RobotoMono-Bold.ttf`). Simple, but the dash-bearing statics
-     are pruned on platforms that do not support the manifest, so a direct
-     static reference is not portable across heads (see COMMON PITFALLS).
+     are pruned in any build where `SupportsFontManifest` is not `'true'`
+     (every CodeBrix.Platform head sets it), so a direct static reference
+     depends on that setting (see COMMON PITFALLS).
 
 What the manifest can and cannot give you, per family:
 
@@ -456,8 +458,8 @@ In App.xaml.cs, before InitializeComponent():
         InitializeComponent();
     }
 
-The URI assigned to DefaultTextFontFamily must carry no `#FamilyName` fragment —
-that one is not merely useless, it breaks the startup manifest preload.
+The URI assigned to DefaultTextFontFamily needs no `#FamilyName` fragment — the
+framework strips it, so it is useless there too.
 
 Example 5 — a specific script on a specific element
 ---------------------------------------------------
@@ -506,14 +508,16 @@ if you need them at a predictable path.
 MINIMUM VIABLE PROJECT
 ======================
 
-A CodeBrix.Platform application head references this package like any other:
+A CodeBrix.Platform application references this package from its `.Core`
+library project, like any other bundled font (each head project carries only
+its one head package and receives the rest through `.Core`):
 
     <Project Sdk="Microsoft.NET.Sdk">
       <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
       </PropertyGroup>
       <ItemGroup>
-        <!-- plus the CodeBrix.Platform packages the head needs -->
+        <!-- plus the CodeBrix.Platform packages the .Core project needs -->
         <PackageReference Include="CodeBrix.Platform.Fonts.RobotoMono.OflLicenseForever" />
       </ItemGroup>
     </Project>
@@ -562,10 +566,7 @@ COMMON PITFALLS TO AVOID
 
   1. NEVER append a `#FamilyName` fragment to a font URI from this package.
      CodeBrix.Platform strips the fragment before resolving the font, so it buys
-     nothing — and on the value assigned to
-     `FeatureConfiguration.Font.DefaultTextFontFamily` it actively breaks the
-     startup font-manifest preload, because the ".manifest" suffix the preload
-     appends lands inside the URI fragment and is dropped.
+     nothing.
 
   2. Do not reference a dash-bearing static file (e.g. RobotoMono-Bold.ttf)
      from code or XAML that must work on every head. Those files are pruned at
@@ -578,8 +579,9 @@ COMMON PITFALLS TO AVOID
      DefaultTextFontFamily names one of its URIs.
 
   4. Companion coverage is not automatic either. Polytonic Greek, Armenian and
-     Georgian only appear if you wire FallbackFontFamilies (or set FontFamily
-     directly on the elements carrying those scripts).
+     Georgian only come from this package's companions if you wire
+     FallbackFontFamilies (or set FontFamily directly on the elements carrying
+     those scripts).
 
   5. Roboto Mono has no ExtraBold or Black. Weight requests above 700 resolve to
      Bold — the top of both the manifest and the variable font's axis. Do not
